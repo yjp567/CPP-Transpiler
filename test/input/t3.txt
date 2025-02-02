@@ -1,0 +1,21 @@
+set int small;           
+set float big;           
+
+func calculate_sum([int] nums; float) <         
+    float total = 0;                             
+    loop (int i = 0; i < size[nums]; i = i + 1): <  
+        total = total + nums[i];                  
+    >
+    return total;                                 
+>
+
+[int] values;                                     
+values <-[10];                                  
+values <-[20];                               
+
+                
+values->[];                                  
+float last_value;                               
+last_value = 15.5;                              
+values <-[last_value];                            
+print(calculate_sum(values));         

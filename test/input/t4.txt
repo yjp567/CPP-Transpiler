@@ -1,0 +1,17 @@
+set int small;           # Set small int type
+set float big;           # Set big float type
+
+func calculate_sum([int] nums; float) <         # Function Declaration with a vector argument
+    float total = 0;                             # Variable Declaration
+    loop (int i = 0; i < size[nums]; i = i + 1) : <  # Loop Statement
+        total = total + nums[i];                  # Add vector elements to total
+    >
+    return total;                                 # Return the total sum
+>
+
+[int] values;                                     # Vector Declaration
+values <-[10];                                    # Push values into vector
+values <-[20];                                    
+values <-[30];                                    
+
+print(calculate_sum(values));                   

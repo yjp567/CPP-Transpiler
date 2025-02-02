@@ -1,0 +1,18 @@
+set int small;           
+set float big;           
+
+func classify_total({int: float} mymap; int) <   
+    float total = 0;                            
+    loop (int key = 0; key < size[mymap]; key = key + 1): <   
+        total = total + mymap[key];              
+    >
+    <
+    total > 100 ? return 1;                        
+    else: return 3;                        
+    >                              
+>
+
+{int: float} values;  
+values[0] = 30.5;
+values[1] = 40.2;
+values[10] = 35.7;

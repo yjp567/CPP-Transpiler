@@ -1,0 +1,22 @@
+set int small;           # Set small int type
+set float big;           # Set big float type
+
+func total_value({int: float} mymap; float) <    # Function Declaration with a map argument
+    float total = 0;                            # Variable Declaration
+    loop (int key = 0; key < size[mymap]; key = key + 1): <  # Loop through map keys
+        total = total + mymap[key];              # Add map values to total
+    >
+    return total;                                # Return the total sum
+>
+
+{int: float} items;                              # Map Declaration
+items[0] = 25.5;                               # Push key-value pair to map
+items[1]=12;                               # Push another key-value pair
+
+print(total_value(items));                       # Print total sum from the function
+
+items[1]=1;                           # Pop value for key 1 from the map
+print(value);                                    # Print the popped value
+
+items[3]=200;                               # Push a new value for key 1
+print(total_value(items));                       # Print new total sum
