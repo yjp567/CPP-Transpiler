@@ -1,0 +1,28 @@
+set int small;           
+set float big;           
+
+func calculate_average([int] numbers ; float) <   
+    float sum = 0;                              
+    loop (int i = 0; i < size[numbers]; i = i + 1): <   
+        sum = sum + numbers[i];                   
+    >
+    return sum / size[numbers];                   
+>
+
+func classify_average(float avg; int) <           
+    <
+        avg > 90 ? return 1;                      
+        avg > 75 ? return 2;                      
+        else: return 3;                           
+    >
+>
+
+[int] scores;                                      
+scores <-[80];                                     
+scores <-[90];
+scores <-[100];
+scores <-[70];
+
+float avg = calculate_average(scores);             
+print(avg);                                        
+print(classify_average(avg));    
